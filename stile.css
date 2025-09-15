@@ -1,0 +1,160 @@
+/* ===== Base y layout ===== */
+:root{
+  --bg:#0b0b0f;            /* negro profundo */
+  --card:#111319;          /* panel oscuro */
+  --muted:#9aa4b2;         /* gris claro para textos secundarios */
+  --border:#222633;        /* bordes */
+  --white:#ffffff;
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+.page-wrap{
+  padding: 24px 0 40px;
+}
+
+/* ===== Encabezado ===== */
+.title{
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin: 0;
+}
+
+.subtitle{
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+/* Tarjeta académica */
+.card-academic{
+  background: linear-gradient(180deg, #111319, #0f1117);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin: 12px auto 0;
+  max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.meta span{
+  display:block;
+  font-size:.85rem;
+  color: var(--muted);
+}
+.meta strong{
+  font-size:1rem;
+}
+
+.students{
+  margin: 6px 0 0 18px;
+}
+
+/* ===== Bandera ===== */
+.flag-card{
+  background: radial-gradient(1200px 400px at 50% -10%, rgba(255,255,255,.08), rgba(0,0,0,0));
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+  max-width: 980px;
+}
+
+.flag-container{
+  display: flex;
+  width: 100%;
+  height: clamp(220px, 36vw, 360px);  /* responsivo */
+  border: 2px solid #000;
+  border-radius: 8px;
+  overflow: hidden;                    /* que se vea como una sola pieza */
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,.06),   /* halo para separar del fondo negro */
+    0 10px 30px rgba(0,0,0,.6);
+}
+
+.band{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#greenBox{ background: rgb(0,128,0); }
+#redBox  { background: rgb(128,0,0); }
+.white   { background: #ffffff; }
+
+.escudo{
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #000; /* contraste en blanco */
+}
+
+/* ===== Controles debajo ===== */
+.controls-row{
+  max-width: 980px;
+  margin: 18px auto 0;
+}
+
+.form-label{
+  color: var(--white);
+}
+
+/* Color del valor HEX */
+.hex-text{
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Ranges en modo oscuro (mínimo cross-browser sin librerías) */
+.form-range{
+  height: 1.2rem;
+}
+
+.form-range::-webkit-slider-runnable-track{
+  height: 6px;
+  background: #2a2f3d;
+  border-radius: 999px;
+}
+.form-range::-moz-range-track{
+  height: 6px;
+  background: #2a2f3d;
+  border-radius: 999px;
+}
+
+.form-range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid #1a73e8;
+  margin-top: -6px;
+}
+.form-range::-moz-range-thumb{
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid #1a73e8;
+}
+
+/* opcional: color temático por canal */
+.range-green::-webkit-slider-thumb { border-color: #16a34a; }
+.range-red  ::-webkit-slider-thumb { border-color: #dc2626; }
+.range-green::-moz-range-thumb     { border-color: #16a34a; }
+.range-red  ::-moz-range-thumb     { border-color: #dc2626; }
+
+/* Responsivo fino */
+@media (max-width: 768px){
+  .students{ margin-left: 12px; }
+}
